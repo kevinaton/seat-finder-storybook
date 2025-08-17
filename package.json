@@ -1,0 +1,41 @@
+{
+  "name": "seat-finder-storybook",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "vue": "^3.5.18",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@chromatic-com/storybook": "^4.1.0",
+    "@headlessui/vue": "^1.7.23",
+    "@heroicons/vue": "^2.2.0",
+    "@storybook/addon-a11y": "^9.1.2",
+    "@storybook/addon-docs": "^9.1.2",
+    "@storybook/addon-onboarding": "^9.1.2",
+    "@storybook/test-runner": "^0.23.0",
+    "@storybook/vue3-vite": "^9.1.2",
+    "@tailwindcss/postcss": "^4.1.12",
+    "@vitejs/plugin-vue": "^6.0.1",
+    "axios": "^1.11.0",
+    "date-fns": "^4.1.0",
+    "playwright": "^1.54.2",
+    "sass": "^1.90.0",
+    "storybook": "^9.1.2",
+    "tailwindcss": "^4.1.12",
+    "vite": "^7.1.2",
+    "vue3-colorpicker": "^2.3.0",
+    "vue3-slider": "^1.10.1",
+    "vuex": "^4.1.0"
+  }
+}

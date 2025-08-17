@@ -1,0 +1,70 @@
+<template>
+  <component
+    :is="as"
+    :type="type"
+    :class="[
+      getClasses(),
+      isLoading && '!flex items-center justify-center gap-x-2',
+      disabled && 'cursor-not-allowed !opacity-70',
+    ]"
+    :disabled="variant === 'disabled' || disabled"
+  >
+    <slot />
+
+    <LoadingIcon v-if="isLoading" class="text-white fill-white w-5" />
+  </component>
+</template>
+
+<script setup>
+import LoadingIcon from './LoadingIcon.vue'
+
+const props = defineProps({
+  as: {
+    type: String,
+    default: 'button', // button, link, router-link
+  },
+  variant: {
+    type: String,
+    default: 'primary', // primary, secondary, outline, disabled
+  },
+  type: {
+    type: String,
+    default: 'button', // button, submit
+  },
+  disabled: {
+    type: Boolean,
+    default: () => false,
+  },
+  isLoading: {
+    type: Boolean,
+    default: () => false,
+  },
+})
+
+const getClasses = () => {
+  let defaultClasses =
+    'inline-block py-2 px-3 rounded-md border text-sm lg:text-base hover:opacity-90 outline-none hover-transition'
+  let classes = ''
+
+  switch (props.variant) {
+    case 'secondary':
+      classes = 'bg-secondary border-secondary text-white'
+      break
+    case 'outline':
+      classes = 'border border-primary text-primary'
+      break
+    case 'plain':
+      classes = 'border border-gray-400 text-gray-500'
+      break
+    case 'blank':
+      classes = 'border-none !p-2'
+      break
+    case 'primary':
+    default:
+      classes = 'bg-primary border-primary text-white'
+      break
+  }
+
+  return `${defaultClasses} ${classes}`
+}
+</script>
