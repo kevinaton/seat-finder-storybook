@@ -1,57 +1,22 @@
-@import 'tailwindcss';
+@import url('@vuepic/vue-datepicker/dist/main.css');
+@import url('ckeditor5/ckeditor5.css');
+@import url('_tailwind.scss');
+@import url('_fonts.scss');
+@import url('_animations.scss');
+@import url('_variables.scss');
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
+@import url('components/_table.scss');
+@import url('components/_form.scss');
+@import url('components/_datepicker.scss') layer(base);
 
-  button {
-    cursor: pointer;
-  }
-
-  html,
-  body {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-  }
-}
-
-@theme {
-  --color-primary: #27272a;
-  --color-secondary: #e4e4e7;
-  
-  --font-sans: 'Inter', '"Helvetica Neue"', 'Arial', 'sans-serif';
-  --font-headline: 'Inter', '"Helvetica Neue"', 'Arial', 'sans-serif';
-}
-
-@utility container {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1024px;
-  padding-inline: --spacing(4);
+html,
+body {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
 }
 
 .body-text {
   @apply text-sm text-[#27272A];
-}
-
-.hover-transition {
-  @apply transition-all duration-150 ease-in-out;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
 }
 
 *::-webkit-scrollbar {
@@ -62,8 +27,11 @@
   background-color: #555;
   border: 3px solid #555;
   border-radius: 3px;
+  /* border: 1px solid #f0f0f0; */
 }
 *::-webkit-scrollbar-track {
+  /* -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3); */
+  /* background-color: #f0f0f0; */
   background-color: transparent;
 }
 
@@ -84,3 +52,32 @@ input.no-arrows::-webkit-inner-spin-button {
 input[type='number'].no-arrows {
   -moz-appearance: textfield;
 }
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.hover-transition {
+  @apply transition-all duration-150 ease-in-out;
+}
+
+.qr-code-image {
+  @apply w-full h-[88dvw] lg:h-[300px] max-w-[370px] max-h-[370px];
+  height: 370px !important;
+  width: 370px !important;
+}
+
+// Disable zooming on input mobile browsers
+// @supports (-webkit-overflow-scrolling: touch) {
+//   select,
+//   input,
+//   textarea {
+//     font-size: 14px;
+//   }
+// }
